@@ -37,3 +37,21 @@ canvas {
   justify-content: flex-end;
   padding-top: .5rem;
 }
+
+.author-links {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 10;
+}
+
+.author-links a {
+  color: #333;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 0.75rem;
+  font-family: 'Open Sans', sans-serif;
+}
