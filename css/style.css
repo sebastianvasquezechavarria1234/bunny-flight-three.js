@@ -20,6 +20,11 @@ a {
 
 canvas {
   display: block;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
 }
 
 .credits {
