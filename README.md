@@ -17,7 +17,7 @@
 ![preview](img/preview.jpg)
 <br>
 
-[Live demo](https://sebas-dev.vercel.app/) · [Source code](https://github.com/sebastianvasquezechavarria1234/bunny-flight-three.js)
+[Live demo](https://bunny-flight-three-js.vercel.app/) · [Source code](https://github.com/sebastianvasquezechavarria1234/bunny-flight-three.js)
 
 </div>
 
