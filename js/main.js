@@ -29,39 +29,39 @@ internals.controls.maxDistance = 250;
   internals.scene.add(directional);
 }());
 
-(function createFloor(){
-  const canvas = document.createElement('canvas');
-  canvas.width = 512;
-  canvas.height = 512;
-  const ctx = canvas.getContext('2d');
+// (function createFloor(){
+//   const canvas = document.createElement('canvas');
+//   canvas.width = 512;
+//   canvas.height = 512;
+//   const ctx = canvas.getContext('2d');
 
-  ctx.fillStyle = '#e0dacd';
-  ctx.fillRect(0, 0, 512, 512);
+//   ctx.fillStyle = '#e0dacd';
+//   ctx.fillRect(0, 0, 512, 512);
 
-  ctx.filter = 'blur(20px)';
-  ctx.fillStyle = '#e0dacd';
-  ctx.fillRect(0, 0, 512, 512);
-  ctx.filter = 'none';
+//   ctx.filter = 'blur(20px)';
+//   ctx.fillStyle = '#e0dacd';
+//   ctx.fillRect(0, 0, 512, 512);
+//   ctx.filter = 'none';
 
-  const gradient = ctx.createRadialGradient(256, 256, 0, 256, 256, 360);
-  gradient.addColorStop(0, 'rgba(224, 218, 205, 1)');
-  gradient.addColorStop(0.5, 'rgba(200, 230, 230, 0.9)');
-  gradient.addColorStop(1, 'rgba(197, 245, 245, 0.95)');
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, 512, 512);
+//   const gradient = ctx.createRadialGradient(256, 256, 0, 256, 256, 360);
+//   gradient.addColorStop(0, 'rgba(224, 218, 205, 1)');
+//   gradient.addColorStop(0.5, 'rgba(200, 230, 230, 0.9)');
+//   gradient.addColorStop(1, 'rgba(197, 245, 245, 0.95)');
+//   ctx.fillStyle = gradient;
+//   ctx.fillRect(0, 0, 512, 512);
 
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.wrapS = THREE.RepeatWrapping;
-  texture.wrapT = THREE.RepeatWrapping;
+//   const texture = new THREE.CanvasTexture(canvas);
+//   texture.wrapS = THREE.RepeatWrapping;
+//   texture.wrapT = THREE.RepeatWrapping;
 
-  const floor = new THREE.Mesh(
-    new THREE.PlaneBufferGeometry(1000, 1000),
-    new THREE.MeshBasicMaterial({ map: texture, transparent: true })
-  );
-  floor.rotation.x = -Math.PI / 2;
-  floor.position.y = -100;
-  internals.scene.add(floor);
-}());
+//   const floor = new THREE.Mesh(
+//     new THREE.PlaneBufferGeometry(1000, 1000),
+//     new THREE.MeshBasicMaterial({ map: texture, transparent: true })
+//   );
+//   floor.rotation.x = -Math.PI / 2;
+//   floor.position.y = -100;
+//   internals.scene.add(floor);
+// }());
 
 (function addElements() {
   internals.scene.add(new Carrot().mesh);
