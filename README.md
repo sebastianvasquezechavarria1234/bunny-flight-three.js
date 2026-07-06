@@ -1,18 +1,20 @@
 <div align="center">
 
-# Bunny Flight
+# 🥕🐰 Bunny Flight
 
 ### A bunny pilot soaring through clouds, built from scratch with Three.js
 
-<br>
 
-![preview](preview.png)
 
 <br>
 
 ![Three.js](https://img.shields.io/badge/Three.js-r110-049EF4?logo=three.js&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP-2.1.3-88CE02?logo=greensock&logoColor=white)
 
+
+<br>
+
+![preview](img/preview.jpg)
 <br>
 
 [Live demo](https://sebas-dev.vercel.app/) · [Source code](https://github.com/sebastianvasquezechavarria1234/bunny-flight-three.js)
@@ -116,9 +118,8 @@ The light blue background (`#C5F5F5`) and fog create depth without a complex sky
 | Sky | Blue | `#C5F5F5` |
 
 ---
-
 <div align="center">
 
-Made with patience and Three.js
+Made with ❤️ by <a href="https://sebas-dev.vercel.app/" target="_blank" rel="noopener noreferrer">Sebastián V</a>
 
 </div>
