@@ -56,8 +56,7 @@ class Pilot {
     
     this.earPivotL = new THREE.Object3D();
     
-    // Use applyMatrix4 to maintain compatibility
-    this.earPivotL.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 2.5, 0));
+    this.earPivotL.applyMatrix(new THREE.Matrix4().makeTranslation(0, 2.5, 0));
     this.earPivotL.rotation.x = -Math.PI/2.25;
     
     this.earPivotR = this.earPivotL.clone();
