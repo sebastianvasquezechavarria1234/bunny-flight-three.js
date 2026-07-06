@@ -43,8 +43,8 @@ canvas {
   bottom: 1rem;
   left: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  flex-direction: row;
+  gap: 1rem;
   z-index: 10;
 }
 
