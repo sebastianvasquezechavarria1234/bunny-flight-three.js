@@ -2,7 +2,11 @@
 
 # Bunny Flight
 
-### Un conejo piloto surcando un cielo de nubes, construido desde cero con Three.js
+### A bunny pilot soaring through clouds, built from scratch with Three.js
+
+<br>
+
+![preview](preview.png)
 
 <br>
 
@@ -11,116 +15,110 @@
 
 <br>
 
-[Ver demo](https://sebas-dev.vercel.app/) · [Código fuente](https://github.com/sebastianvasquezechavarria1234/bunny-flight-three.js)
+[Live demo](https://sebas-dev.vercel.app/) · [Source code](https://github.com/sebastianvasquezechavarria1234/bunny-flight-three.js)
 
 </div>
 
 ---
 
-## Sobre el proyecto
+## About
 
-Bunny Flight nació como una exploración de lo que se puede lograr con geometría procedural y animación por código. No hay modelos externos, no hay texturas descargadas: cada forma —la zanahoria, el conejo, las nubes— existe porque alguien definió sus vértices a mano.
+Bunny Flight started as an exploration of what procedural geometry and code-driven animation can achieve. There are no external models, no downloaded textures — every shape exists because someone defined its vertices by hand.
 
-El resultado es una escena breve pero hipnótica: un conejo montado en una zanahoria con alas, flotando entre nubes que cruzan la pantalla. Simple en concepto, cuidadoso en ejecución.
-
----
-
-## ¿Qué hay aquí?
-
-| Componente | Qué hace |
-|------------|----------|
-| **Zanahoria-avión** | Cuerpo cilíndrico deformado, alas con vértices ajustados, tres hojas giratorias |
-| **Conejo piloto** | Orejas que se balancean, ojos que parpadean, asiento integrado |
-| **Nubes** | Tres esferas agrupadas que cruzan el escenario de derecha a izquierda |
-| **Escenario** | Niebla atmosférica, iluminación direccional, sombras en tiempo real |
-
-Cada pieza es una clase independiente que se ensambla en `main.js`. La arquitectura es deliberadamente simple: sin build tools, sin frameworks, sin complicaciones.
+The result is a short but hypnotic scene: a rabbit riding a carrot with wings, floating among clouds that drift across the screen. Simple in concept, careful in execution.
 
 ---
 
-## Tecnologías
+## What's in here?
 
-| Tecnología | Uso |
-|------------|-----|
-| **Three.js r110** | Motor 3D y renderizado WebGL. Se usa esta versión porque el proyecto modifica vértices de geometrías — algo que fue deprecado en versiones posteriores. |
-| **GSAP 2.1.3** | Todas las animaciones: flotación, balanceo de orejas, parpadeo, tránsito de nubes. |
-| **HTML / CSS** | Estructura mínima. El CSS se limita a eliminar márgenes y ocultar overflow. |
+| Component | What it does |
+|-----------|--------------|
+| **Carrot plane** | Deformed cylindrical body, vertex-adjusted wings, three spinning leaves |
+| **Bunny pilot** | Bouncing ears, blinking eyes, integrated seat |
+| **Clouds** | Three grouped spheres crossing the scene from right to left |
+| **Scene** | Atmospheric fog, directional lighting, real-time shadows |
+
+Each piece is a standalone class assembled in `main.js`. The architecture is deliberately simple: no build tools, no frameworks, no complications.
 
 ---
 
-## Estructura
+## Tech stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Three.js r110** | 3D engine and WebGL rendering. This version is used because the project modifies geometry vertices — something deprecated in later releases. |
+| **GSAP 2.1.3** | All animations: floating, ear bouncing, blinking, cloud transit. |
+| **HTML / CSS** | Minimal structure. CSS only removes margins and hides overflow. |
+
+---
+
+## Project structure
 
 ```
 bunny-flight/
-├── index.html        ← punto de entrada
+├── index.html        ← entry point
 ├── css/
-│   └── style.css     ← estilos globales
+│   └── style.css     ← global styles
 ├── js/
-│   ├── utils.js      ← materiales, constantes y utilidades
-│   ├── Cloud.js      ← nubes animadas
-│   ├── Pilot.js      ← conejo piloto
-│   ├── Carrot.js     ← zanahoria-avión
-│   └── main.js       ← orquestación de la escena
+│   ├── utils.js      ← materials, constants, utilities
+│   ├── Cloud.js      ← animated clouds
+│   ├── Pilot.js      ← bunny pilot
+│   ├── Carrot.js     ← carrot plane
+│   └── main.js       ← scene orchestration
 ```
 
 ---
 
-## Ejecución
+## Getting started
 
-No se necesita instalar nada. Abre `index.html` en un navegador y listo.
+Nothing to install. Open `index.html` in a browser and you're set.
 
-Si prefieres un servidor local:
+Or run a local server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Luego navega a `http://localhost:8000`.
+Then visit `http://localhost:8000`.
 
 ---
 
-## Controles
+## Controls
 
-| Acción | Input |
+| Action | Input |
 |--------|-------|
-| Rotar la escena | Click izquierdo + arrastrar |
-| Zoom | Scroll del ratón |
-| Desplazar | Click derecho + arrastrar |
+| Rotate scene | Left click + drag |
+| Zoom | Mouse wheel |
+| Pan | Right click + drag |
 
 ---
 
-## Detalles técnicos
+## Technical details
 
-La escena se construye sobre un objeto `internals` que centraliza el renderer, la cámara, la escena y los materiales. Cada clase (`Carrot`, `Cloud`, `Pilot`) encapsula su propia geometría y animación, manteniendo el código modular sin excesiva abstracción.
+The scene is built on an `internals` object that centralizes the renderer, camera, scene, and materials. Each class (`Carrot`, `Cloud`, `Pilot`) encapsulates its own geometry and animation, keeping the code modular without excessive abstraction.
 
-Las animaciones usan `TweenMax` con modos `yoyo` e `Infinity` para crear movimientos perpetuos y naturales. Las nubes se reinician fuera de cámara y reaparecen con posiciones Y aleatorias, dando sensación de continuidad.
+Animations use `TweenMax` with `yoyo` and `Infinity` to create perpetual, natural motion. Clouds reset off-camera and reappear with randomized Y positions, giving a sense of continuity.
 
-El fondo azul claro (`#C5F5F5`) y la niebla crean profundidad sin necesidad de un skybox complejo.
+The light blue background (`#C5F5F5`) and fog create depth without a complex skybox.
 
 ---
 
-## Paleta
+## Palette
 
 | | Color | Hex |
 |---|-------|-----|
-| Zanahoria | Naranja | `#B7513C` |
-| Hojas | Verde | `#379351` |
-| Alas / Asiento | Marrón | `#5C2C22` |
-| Nariz / Orejas | Rosa | `#B1325E` |
-| Conejo | Gris | `#AAAAAA` |
-| Nubes | Blanco | `#EEEEEE` |
-| Cielo | Azul | `#C5F5F5` |
-
----
-
-## Autor
-
-**Sebastian V.** · [sebas-dev.vercel.app](https://sebas-dev.vercel.app/)
+| Carrot | Orange | `#B7513C` |
+| Leaves | Green | `#379351` |
+| Wings / Seat | Brown | `#5C2C22` |
+| Nose / Ears | Pink | `#B1325E` |
+| Bunny | Gray | `#AAAAAA` |
+| Clouds | White | `#EEEEEE` |
+| Sky | Blue | `#C5F5F5` |
 
 ---
 
 <div align="center">
 
-Hecho con paciencia y Three.js
+Made with patience and Three.js
 
 </div>
