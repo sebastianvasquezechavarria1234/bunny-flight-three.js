@@ -45,8 +45,8 @@ internals.controls.maxDistance = 250;
 
   const gradient = ctx.createRadialGradient(256, 256, 0, 256, 256, 360);
   gradient.addColorStop(0, 'rgba(224, 218, 205, 1)');
-  gradient.addColorStop(0.7, 'rgba(224, 218, 205, 0.8)');
-  gradient.addColorStop(1, 'rgba(224, 218, 205, 0)');
+  gradient.addColorStop(0.5, 'rgba(200, 230, 230, 0.9)');
+  gradient.addColorStop(1, 'rgba(197, 245, 245, 0.95)');
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 512, 512);
 
